@@ -1,11 +1,11 @@
-{ ... }:
+let
+  dir = ./.;
+  entries = builtins.readDir dir;
+  files = builtins.filter (
+    name:
+    entries.${name} == "regular" && name != "default.nix" && builtins.match ".*\\.nix" name != null
+  ) (builtins.attrNames entries);
+in
 {
-  imports = [
-    ../common
-  ];
-
-  # Laptop-specific settings go here, e.g.:
-  # services.power-profiles-daemon.enable = true;
-  # services.printing.enable = true;
-  # hardware.bluetooth.enable = true;
+  imports = map (name: dir + "/${name}") files ++ [ ../../../shared/common ];
 }
