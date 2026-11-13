@@ -3,7 +3,11 @@ let
   users = [ jonas ];
 
   opencloud = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH4lGYYnNcwUK23Yl3tGRQdaraKTaiMDuLvq9YuGVxnw";
-  systems = [ opencloud ];
+  nixos = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIClNi2DLnPx4aYXcyt2T6rfwiqZIXYTsWNfemqc5D4qo"; # Main laptop
+  systems = [
+    opencloud
+    nixos
+  ];
 in
 {
   "github-key.age".publicKeys = users ++ systems;
