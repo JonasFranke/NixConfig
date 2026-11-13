@@ -9,7 +9,7 @@
     ./hardware-configuration.nix
     ./opencloud.nix
     ./borgbackup.nix
-    ../../shared/server
+    ../../../shared/server
   ];
 
   # Boot
