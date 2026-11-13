@@ -7,5 +7,5 @@ let
   ) (builtins.attrNames entries);
 in
 {
-  imports = map (name: dir + "/${name}") files ++ [ ../../../shared/common ];
+  imports = map (name: dir + "/${name}") files ++ [ ../../shared/common ];
 }

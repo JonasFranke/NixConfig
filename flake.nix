@@ -78,7 +78,7 @@
             })
 
             ./hosts/laptops/main/configuration.nix
-            inputs.agenix.nixosModules.default
+            agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

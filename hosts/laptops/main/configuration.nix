@@ -21,6 +21,8 @@ in
     ../../../shared/laptop
   ];
 
+  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+
   # Bootloader.
   boot.loader = {
     efi.canTouchEfiVariables = true;
@@ -261,16 +263,6 @@ in
   environment.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
-  };
-
-  # Bluetooth
-  services.blueman.enable = true;
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings.General = {
-      Experimental = true;
-    };
   };
 
   virtualisation.docker.enable = true;
