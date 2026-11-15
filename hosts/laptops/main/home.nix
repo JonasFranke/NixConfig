@@ -42,6 +42,7 @@ in
   ];
 
   imports = importsList ++ [
+    ../../../shared/laptop/home
     "${inputs.home-manager-unstable}/modules/services/window-managers/hyprland.nix"
     inputs.zen-browser.homeModules.beta
   ];
