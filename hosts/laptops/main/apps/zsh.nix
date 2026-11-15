@@ -10,6 +10,8 @@
       dev = "nix develop --command zsh";
       sqlite3 = "rlwrap sqlite3";
       gs = "git status";
+      rebuild = "sudo nixos-rebuild switch --flake ~/NixConfig#$(hostname)";
+      update = "cd ~/NixConfig && nix flake update && sudo nixos-rebuild switch --flake .#$(hostname)";
     };
 
     initContent = ''
