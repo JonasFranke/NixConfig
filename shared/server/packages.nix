@@ -9,7 +9,7 @@
     fastfetch
     btop
     iperf
-    inputs.nixvim-config.packages.${stdenv.hostPlatform.system}.default
+    inputs.nixvim.packages.${stdenv.hostPlatform.system}.default
   ];
 
   environment.variables = {

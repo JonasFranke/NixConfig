@@ -1,12 +1,11 @@
-{ ... }:
+let
+  dir = ./.;
+  entries = builtins.readDir dir;
+  files = builtins.filter (
+    name:
+    entries.${name} == "regular" && name != "default.nix" && builtins.match ".*\\.nix" name != null
+  ) (builtins.attrNames entries);
+in
 {
-  imports = [
-    ./nix-settings.nix
-    ./users.nix
-    ./zsh.nix
-    ./tailscale.nix
-    ./tmux.nix
-    ./packages.nix
-    ./secrets.nix
-  ];
+  imports = map (name: dir + "/${name}") files;
 }
