@@ -104,7 +104,7 @@
     "flake-parts_2": {
       "inputs": {
         "nixpkgs-lib": [
-          "nixvim-config",
+          "nixvim",
           "nixvim",
           "nixpkgs"
         ]
@@ -625,9 +625,29 @@
     },
     "nixvim": {
       "inputs": {
+        "flake-parts": "flake-parts",
+        "nixpkgs": "nixpkgs_3",
+        "nixvim": "nixvim_2"
+      },
+      "locked": {
+        "lastModified": 1794473030,
+        "narHash": "sha256-w2AuK+frkaPwbLa5zlV9PVBOh2TLyoKJetWWuM9k7mg=",
+        "owner": "JonasFranke",
+        "repo": "NixVimConfig",
+        "rev": "9dff85a4680fa912c99775fc3def272fde53b7c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JonasFranke",
+        "repo": "NixVimConfig",
+        "type": "github"
+      }
+    },
+    "nixvim_2": {
+      "inputs": {
         "flake-parts": "flake-parts_2",
         "nixpkgs": [
-          "nixvim-config",
+          "nixvim",
           "nixpkgs"
         ],
         "systems": "systems_2"
@@ -643,26 +663,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "nixvim",
-        "type": "github"
-      }
-    },
-    "nixvim-config": {
-      "inputs": {
-        "flake-parts": "flake-parts",
-        "nixpkgs": "nixpkgs_3",
-        "nixvim": "nixvim"
-      },
-      "locked": {
-        "lastModified": 1794473030,
-        "narHash": "sha256-w2AuK+frkaPwbLa5zlV9PVBOh2TLyoKJetWWuM9k7mg=",
-        "owner": "JonasFranke",
-        "repo": "NixVimConfig",
-        "rev": "9dff85a4680fa912c99775fc3def272fde53b7c0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "JonasFranke",
-        "repo": "NixVimConfig",
         "type": "github"
       }
     },
@@ -697,7 +697,7 @@
         "nix-colors": "nix-colors",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "nixvim-config": "nixvim-config",
+        "nixvim": "nixvim",
         "zen-browser": "zen-browser"
       }
     },
