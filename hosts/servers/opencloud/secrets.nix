@@ -1,10 +1,10 @@
 {
   age.secrets = {
     opencloud-betterstack = {
-      file = ../../secrets/opencloud-betterstack.age;
+      file = ../../../secrets/opencloud-betterstack.age;
     };
     opencloud-resend = {
-      file = ../../secrets/opencloud-resend.age;
+      file = ../../../secrets/opencloud-resend.age;
     };
   };
 }
