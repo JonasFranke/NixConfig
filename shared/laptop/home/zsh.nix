@@ -36,7 +36,11 @@
         "zoxide"
         "sudo"
         "bun"
+        "ssh-agent"
       ];
+      extraConfig = ''
+        zstyle :omz:plugins:ssh-agent identities id_ed25519
+      '';
       theme = "robbyrussell";
     };
   };
