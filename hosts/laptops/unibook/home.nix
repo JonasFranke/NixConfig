@@ -31,10 +31,9 @@
     "${inputs.home-manager-unstable}/modules/services/window-managers/hyprland.nix"
     ./apps/hyprland.nix
     ./apps/ghostty.nix
-    ./apps/waybar/waybar.nix
-    ./apps/zsh.nix
+    ./apps/waybar.nix
+    ./apps/eza.nix
     ./apps/rofi.nix
-    ./apps/direnv.nix
   ];
 
   services.ssh-agent.enable = true;

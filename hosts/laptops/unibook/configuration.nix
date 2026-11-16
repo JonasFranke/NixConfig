@@ -8,8 +8,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./cachix.nix
+    ../../../shared/laptop
   ];
+
+  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
   # Bootloader
   boot.loader = {
@@ -28,10 +30,6 @@
 
   networking.hostName = "jf-unibook"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Security
   security.pam.services.hyprlock = {
@@ -58,21 +56,8 @@
     ];
   };
 
-  services.tailscale.enable = true;
-
-  # Podman
   virtualisation = {
     containers.enable = true;
-    podman = {
-      enable = true;
-
-      # Create a `docker` alias for podman, to use it as a drop-in replacement
-      dockerCompat = true;
-
-      # Required for containers under podman-compose to be able to talk to each other.
-      defaultNetwork.settings.dns_enabled = true;
-    };
-
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
   };
@@ -80,31 +65,6 @@
   # Virt manager
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = [ "jonasf" ];
-
-  # Enable printing
-  services.printing = {
-    enable = true;
-    drivers = with pkgs; [
-      brlaser
-      dcp9020cdw-cupswrapper
-      dcp9020cdwlpr
-      samsung-unified-linux-driver
-    ];
-  };
-  services.ipp-usb.enable = true;
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-
-  nix.settings = {
-    # Flakes
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-  };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -162,7 +122,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = _: true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -211,7 +170,7 @@
     usbutils
     zoom-us
     discord
-    libreoffice-qt6-fresh
+    libreoffice-qt
     unstable.jetbrains.idea
     unstable.jetbrains.webstorm
     keychain
@@ -246,18 +205,6 @@
     gnumake
   ];
 
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      nerd-fonts.fira-code
-      nerd-fonts.jetbrains-mono
-      fira-code-symbols
-      times-newer-roman
-      montserrat
-      noto-fonts-color-emoji
-    ];
-  };
-
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
@@ -281,15 +228,8 @@
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     withUWSM = true;
   };
-  services.blueman.enable = true;
 
   services.teamviewer.enable = true;
-
-  # Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
 
   services.greetd = {
     enable = true;
@@ -316,9 +256,6 @@
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   networking.firewall = {

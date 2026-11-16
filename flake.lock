@@ -522,6 +522,26 @@
         "type": "github"
       }
     },
+    "nixos-grub-themes": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-stable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1781846278,
+        "narHash": "sha256-FKKfJZnw32Kz5pHmjflb1piJ1dgRjtimQOBiWeAn4DE=",
+        "owner": "jeslie0",
+        "repo": "nixos-grub-themes",
+        "rev": "da7497bdcfbfd55a6279559e2d9af812f511073b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jeslie0",
+        "repo": "nixos-grub-themes",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1790340521,
@@ -695,6 +715,7 @@
         "home-manager-unstable": "home-manager-unstable",
         "hyprland": "hyprland",
         "nix-colors": "nix-colors",
+        "nixos-grub-themes": "nixos-grub-themes",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
