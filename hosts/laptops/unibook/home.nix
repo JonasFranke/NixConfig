@@ -34,6 +34,7 @@
     ./apps/waybar.nix
     ./apps/eza.nix
     ./apps/rofi.nix
+    ./apps/gtk.nix
   ];
 
   services.ssh-agent.enable = true;
