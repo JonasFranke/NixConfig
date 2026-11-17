@@ -35,6 +35,7 @@
     ./apps/eza.nix
     ./apps/rofi.nix
     ./apps/gtk.nix
+    ../../../shared/laptop/home
   ];
 
   services.ssh-agent.enable = true;
