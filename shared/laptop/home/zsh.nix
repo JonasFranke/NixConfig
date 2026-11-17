@@ -12,6 +12,7 @@
       gs = "git status";
       rebuild = "sudo nixos-rebuild switch --flake ~/NixConfig#$(hostname)";
       update = "cd ~/NixConfig && nix flake update && sudo nixos-rebuild switch --flake .#$(hostname)";
+      open = "xdg-open";
     };
 
     initContent = ''
