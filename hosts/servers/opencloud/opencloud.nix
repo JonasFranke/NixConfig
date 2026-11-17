@@ -5,8 +5,8 @@ let
 
   unzipApp = pkgs.fetchzip {
     name = "opencloud-unzip";
-    url = "${baseURL}/unzip-v2.2.1/unzip-2.2.1.zip";
-    hash = "sha256-fRmuIyP2HapfOdkU/90pCt78hmxe6DAB1E17qpGiwEE=";
+    url = "${baseURL}/unzip-v2.2.2/unzip-2.2.2.zip";
+    hash = "sha256-jc6wCo0y35tnw0YydAhFYegjF8g4SIlmIdcxtZXJRM8=";
   };
 
   externalSitesApp = pkgs.fetchzip {
