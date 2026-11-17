@@ -12,7 +12,7 @@
       ".." = "cd ..";
       "..." = "cd ../..";
       rebuild = "sudo nixos-rebuild switch --flake ~/NixConfig#$(hostname)";
-      update = "cd ~/NixConfig && nix flake update && sudo nixos-rebuild switch --flake .#$(hostname)";
+      update = "cd ~/NixConfig && git pull && nix flake update && sudo nixos-rebuild switch --flake .#$(hostname)";
     };
   };
   users.defaultUserShell = pkgs.zsh;

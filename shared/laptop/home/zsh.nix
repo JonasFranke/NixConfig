@@ -11,7 +11,7 @@
       sqlite3 = "rlwrap sqlite3";
       gs = "git status";
       rebuild = "sudo nixos-rebuild switch --flake ~/NixConfig#$(hostname)";
-      update = "cd ~/NixConfig && nix flake update && sudo nixos-rebuild switch --flake .#$(hostname)";
+      update = "cd ~/NixConfig && git pull && nix flake update && sudo nixos-rebuild switch --flake .#$(hostname)";
       open = "xdg-open";
     };
 
