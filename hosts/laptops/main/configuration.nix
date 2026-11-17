@@ -265,8 +265,6 @@ in
     VISUAL = "nvim";
   };
 
-  virtualisation.docker.enable = true;
-
   # Steam
   programs.steam = {
     enable = true;
@@ -388,10 +386,7 @@ in
   };
 
   # Virt manager
-  programs.virt-manager.enable = true;
   users.groups.libvirtd.members = [ "jonas" ];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

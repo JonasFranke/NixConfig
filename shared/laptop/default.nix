@@ -3,7 +3,10 @@ let
   entries = builtins.readDir dir;
   files = builtins.filter (
     name:
-    entries.${name} == "regular" && name != "default.nix" && name != "home" && builtins.match ".*\\.nix" name != null
+    entries.${name} == "regular"
+    && name != "default.nix"
+    && name != "home"
+    && builtins.match ".*\\.nix" name != null
   ) (builtins.attrNames entries);
 in
 {

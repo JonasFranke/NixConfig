@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
@@ -44,6 +44,11 @@
       theme = "robbyrussell";
     };
   };
+
+  home.packages = with pkgs; [
+    cowsay
+    lolcat
+  ];
 
   programs.eza = {
     enable = true;

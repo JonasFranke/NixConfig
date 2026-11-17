@@ -39,6 +39,10 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     nix-colors.url = "github:misterio77/nix-colors";
+    nixos-grub-themes = {
+      url = "github:jeslie0/nixos-grub-themes";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
   };
   outputs =
     {
@@ -89,6 +93,39 @@
                   ./hosts/laptops/main/home.nix
                   nix-colors.homeManagerModules.default
                   hyprland.homeManagerModules.default
+                ];
+              };
+            }
+          ];
+        };
+        jf-unibook = nixpkgs-stable.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          system = "x86_64-linux";
+          modules = [
+            ({ ... }: {
+              nixpkgs = {
+                config.allowUnfree = true;
+                overlays = [
+                  (self: super: {
+                    unstable = import nixpkgs-unstable {
+                      system = "x86_64-linux";
+                      config.allowUnfree = true;
+                    };
+                  })
+                ];
+              };
+            })
+            ./hosts/laptops/unibook/configuration.nix
+            agenix.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.jonasf = {
+                imports = [
+                  ./hosts/laptops/unibook/home.nix
+                  nix-colors.homeManagerModules.default
                 ];
               };
             }

@@ -2,11 +2,6 @@
   programs.fastfetch = {
     enable = true;
     settings = {
-      #logo = {
-      #  source = "${./logo.txt}";
-      #  type = "file";
-      #};
-
       modules = [
         "title"
         "separator"

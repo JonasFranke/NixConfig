@@ -6,5 +6,6 @@
     fira-code-symbols
     times-newer-roman
     montserrat
+    noto-fonts-color-emoji
   ];
 }
