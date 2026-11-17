@@ -1,0 +1,23 @@
+name: Build NixOS configurations
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-opencloud:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Nix
+        uses: DeterminateSystems/nix-installer-action@v23
+
+      - name: Set up Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v15
+
+      - name: Build NixOS System
+        run: nix build .#nixosConfigurations.opencloud.config.system.build.toplevel
