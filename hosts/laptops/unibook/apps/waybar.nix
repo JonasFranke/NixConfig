@@ -28,7 +28,7 @@
 
       "memory" = {
         interval = 10;
-        format = " {used}/{total}GB";
+        format = " {used:0.1f}/{total:0.1f}GB";
       };
 
       "clock" = {

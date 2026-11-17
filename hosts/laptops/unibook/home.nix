@@ -45,29 +45,31 @@
     startInBackground = true;
   };
 
-  colorScheme = {
-    slug = "hyprland_default";
-    name = "Hyprland Default";
-    author = "Vaxry (Adapted)";
-    palette = {
-      base00 = "1a1a1a"; # Background (Standard Hyprland Dark Grey)
-      base01 = "242424"; # Lighter Background
-      base02 = "33ccff"; # Selection Background (Hyprland Primary Cyan)
-      base03 = "595959"; # Comments (Standard Inactive Border Color)
-      base04 = "c5c8c6"; # Dark Foreground
-      base05 = "ffffff"; # Default Text (Pure White)
-      base06 = "f0f0f0"; # Light Foreground
-      base07 = "ffffff"; # Light Background
-      base08 = "ff5555"; # Red
-      base09 = "ffb86c"; # Orange
-      base0A = "f1fa8c"; # Yellow
-      base0B = "00ff99"; # Green (Hyprland Secondary Gradient Color)
-      base0C = "8be9fd"; # Cyan
-      base0D = "33ccff"; # Blue/Accent (Hyprland Primary Gradient Color)
-      base0E = "bd93f9"; # Purple
-      base0F = "ff79c6"; # Brown/Pink (Matches the default Anime Wallpaper)
-    };
-  };
+  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-dark;
+
+  #colorScheme = {
+  #  slug = "hyprland_default";
+  #  name = "Hyprland Default";
+  #  author = "Vaxry (Adapted)";
+  #  palette = {
+  #    base00 = "1a1a1a"; # Background (Standard Hyprland Dark Grey)
+  #    base01 = "242424"; # Lighter Background
+  #    base02 = "33ccff"; # Selection Background (Hyprland Primary Cyan)
+  #    base03 = "595959"; # Comments (Standard Inactive Border Color)
+  #    base04 = "c5c8c6"; # Dark Foreground
+  #    base05 = "ffffff"; # Default Text (Pure White)
+  #    base06 = "f0f0f0"; # Light Foreground
+  #    base07 = "ffffff"; # Light Background
+  #    base08 = "ff5555"; # Red
+  #    base09 = "ffb86c"; # Orange
+  #    base0A = "f1fa8c"; # Yellow
+  #    base0B = "00ff99"; # Green (Hyprland Secondary Gradient Color)
+  #    base0C = "8be9fd"; # Cyan
+  #    base0D = "33ccff"; # Blue/Accent (Hyprland Primary Gradient Color)
+  #    base0E = "bd93f9"; # Purple
+  #    base0F = "ff79c6"; # Brown/Pink (Matches the default Anime Wallpaper)
+  #  };
+  #};
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
