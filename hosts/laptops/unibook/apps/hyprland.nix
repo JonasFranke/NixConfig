@@ -7,6 +7,10 @@
 }:
 let
   lua = lib.generators.mkLuaInline;
+  wallpaper = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/dharmx/walls/refs/heads/main/architecture/a_city_skyline_with_mountains_in_the_background.png";
+    hash = "sha256-dKVr2R/z/lFNhre++meang1BfDW55HhPdNgBXamUvXU=";
+  };
 in
 {
   wayland.windowManager.hyprland = {
@@ -642,7 +646,7 @@ in
       wallpaper = [
         {
           monitor = "";
-          path = "/home/jonasf/Downloads/wallpaper.jpg";
+          path = "${wallpaper}";
         }
       ];
     };
