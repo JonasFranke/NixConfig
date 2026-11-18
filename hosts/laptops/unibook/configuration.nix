@@ -63,7 +63,6 @@
   };
 
   # Virt manager
-  programs.virt-manager.enable = true;
   users.groups.libvirtd.members = [ "jonasf" ];
 
   # Set your time zone.

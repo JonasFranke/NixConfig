@@ -7,14 +7,14 @@
       in
       builtins.toFile "config-hypr.rasi" ''
         * {
-          bg0: #${palette.base00}; // Nord0: Polar Night - Der Haupt-Hintergrund (Dunkelgrau, ~95% deckend)
-          bg1: #${palette.base01};   // Nord1: Polar Night - Hellerer Hintergrund (oft für UI-Elemente/Leisten)
-          bg2: #${palette.base03}; // Nord3: Polar Night - Inaktive Elemente / Auswahl (Grau, 50% transparent)
-          bg3: #${palette.base0D}; // Nord8: Frost - Der typische Cyan-Akzent (Hellblau/Türkis, ~95% deckend)
-          fg0: #${palette.base06};   // Nord4: Snow Storm - Standard Textfarbe (Weiß-Grau)
-          fg1: #${palette.base05};   // Nord6: Snow Storm - Hervorgehobener Text (Hellstes Weiß)
-          fg2: #${palette.base06};   // Nord4: Snow Storm - Sekundärer Text (Gleiche Farbe wie fg0)
-          fg3: #${palette.base03};   // Nord3: Polar Night - Gedimmter Text / Kommentare / Platzhalter (Grau)
+          bg0: #${palette.base00};
+          bg1: #${palette.base01};
+          bg2: #${palette.base03}; 
+          bg3: #${palette.base0D}; 
+          fg0: #${palette.base06}; 
+          fg1: #${palette.base05}; 
+          fg2: #${palette.base06}; 
+          fg3: #${palette.base03}; 
         }
 
         element selected {
