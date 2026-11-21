@@ -60,21 +60,10 @@
 
       "hyprland/workspaces" = {
         format = "{icon} {windows}";
-        format-window-separator = " ";
-        window-rewrite-default = "";
-        window-rewrite = {
-          "title<.*youtube.*>" = "";
-          "title<.*github.*>" = "";
-          "title<.*twitch.*>" = "󰕃";
-          "title<.*whatsapp.*>" = "";
-          "title<.*Home Assistant.*>" = "󰟐";
-          "class<zen-beta>" = "󰐾";
-          "class<spotify>" = "";
-          "class<texstudio>" = "";
-          "class<com.mitchellh.ghostty>" = "";
-          "class<discord>" = "";
-          "class<steam>" = "󰓓";
-          "class<jetbrains-idea>" = "";
+        workspace-taskbar = {
+          enable = true;
+          icon-size = 14;
+          icon-theme = "Papirus";
         };
       };
 
@@ -150,6 +139,11 @@
       #workspaces button.active {
         color: #${config.colorScheme.palette.base05};
         background: #${config.colorScheme.palette.base02};
+      }
+
+      #workspaces .taskbar-window {
+        padding-left: 0;
+        padding-right: 0;
       }
 
       #clock:hover,
