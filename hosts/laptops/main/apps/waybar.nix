@@ -60,27 +60,10 @@
 
       "hyprland/workspaces" = {
         format = "{icon} {windows}";
-        format-window-separator = " ";
-        window-rewrite-default = "";
-        window-rewrite = {
-          "title<.*youtube.*>" = "";
-          "title<.*github.*>" = "";
-          "title<.*twitch.*>" = "󰕃";
-          "title<.*Home Assistant.*>" = "󰟐";
-          "class<zen-beta>" = "󰐾";
-          "class<spotify>" = "";
-          "class<com.mitchellh.ghostty>" = "";
-          "class<discord>" = "";
-          "class<steam>" = "󰓓";
-          "class<jetbrains-idea>" = "";
-          "class<jetbrains-studio>" = "";
-          "class<prusa-slicer>" = "";
-          "class<signal>" = "󰭹";
-          "class<nemo>" = "";
-          "class<thunderbird>" = "󰇮";
-          "class<heroic>" = "󰊗";
-          "class<ModrinthApp>" = "󰍳";
-          "title<.*Minecraft.*>" = "󰍳";
+        workspace-taskbar = {
+          enable = true;
+          icon-size = 14;
+          icon-theme = "Papirus";
         };
       };
 
@@ -139,6 +122,11 @@
         background: transparent;
         border-radius: 0px;
         margin: 0 5px 0 5px;
+      }
+
+      #workspaces .taskbar-window {
+        padding-left: 0;
+        padding-right: 0;
       }
 
       #workspaces button.active {
