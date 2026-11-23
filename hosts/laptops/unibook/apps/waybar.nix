@@ -144,6 +144,8 @@
       #workspaces .taskbar-window {
         padding-left: 0;
         padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
       }
 
       #clock:hover,
