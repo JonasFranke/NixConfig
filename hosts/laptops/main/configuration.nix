@@ -146,10 +146,8 @@ in
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.finegrained = false;
-    open = false;
+    open = true;
     nvidiaSettings = true;
-    #package = config.boot.kernelPackages.nvidiaPackages.stable;
-    #package = config.boot.kernelPackages.nvidiaPackages.latest;
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
       version = "595.91.07";
       sha256_64bit = "sha256-yiPIjdJLB6GRZE4eEc+3vN11NzBXSa9A+YABiwleYxM=";
