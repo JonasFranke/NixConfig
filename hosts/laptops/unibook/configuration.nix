@@ -173,11 +173,7 @@
     unstable.jetbrains.idea
     unstable.jetbrains.webstorm
     keychain
-    (texlive.combine {
-      inherit (texlive)
-        scheme-full
-        ;
-    })
+    texliveFull
     jdk25_headless
     texstudio
     nemo

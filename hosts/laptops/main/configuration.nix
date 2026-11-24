@@ -354,11 +354,7 @@ in
     vlc
     anki
     unstable.nixpkgs-review
-    (texlive.combine {
-      inherit (texlive)
-        scheme-full
-        ;
-    })
+    texliveFull
     texstudio
     unstable.ausweisapp
     losslesscut-bin
