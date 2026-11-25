@@ -591,17 +591,14 @@
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1795544504,
-        "narHash": "sha256-J+GCebDHGjtX+25e8dApJ/FGXXYBergVCUsRugC0Cek=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
+        "narHash": "sha256-5uupFJcBqE71SwECtiHaZYnrSuTvxpXulIZzUiKOh/E=",
         "rev": "f48af937b95fa60510e99dbcbc75b848ce8d548b",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/26.11-small/nixos-26.11beta1.f48af937b95f/nixexprs.tar.zst"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "release-26.11",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-26.11-small/nixexprs.tar.zst"
       }
     },
     "nixpkgs-unstable": {

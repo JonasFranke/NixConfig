@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/release-26.11";
+    nixpkgs-stable.url = "https://channels.nixos.org/nixos-26.11-small/nixexprs.tar.zst";
     nixpkgs-unstable.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
     nixvim = {
       type = "github";
