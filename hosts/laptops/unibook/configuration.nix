@@ -226,6 +226,14 @@
 
   services.teamviewer.enable = true;
 
+  # Power management
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
+  services.thermald.enable = true;
+  services.tlp.enable = true;
+
   services.greetd = {
     enable = true;
     settings = {
