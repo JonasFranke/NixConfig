@@ -18,6 +18,5 @@ in
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
   };
 }
