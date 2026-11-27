@@ -47,14 +47,6 @@ in
     inputs.zen-browser.homeModules.beta
   ];
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
-
-  colorScheme = import ./theme.nix;
-
   services.ssh-agent.enable = true;
 
   # Let Home Manager install and manage itself.

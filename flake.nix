@@ -38,7 +38,7 @@
       repo = "zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    nix-colors.url = "github:misterio77/nix-colors";
+    stylix.url = "github:nix-community/stylix/release-26.05";
     nixos-grub-themes = {
       url = "github:jeslie0/nixos-grub-themes";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -50,7 +50,7 @@
       agenix,
       nixpkgs-unstable,
       hyprland,
-      nix-colors,
+      stylix,
       home-manager,
       ...
     }@inputs:
@@ -83,6 +83,7 @@
 
             ./hosts/laptops/main/configuration.nix
             agenix.nixosModules.default
+            stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -91,7 +92,6 @@
               home-manager.users.jonas = {
                 imports = [
                   ./hosts/laptops/main/home.nix
-                  nix-colors.homeManagerModules.default
                   hyprland.homeManagerModules.default
                 ];
               };
@@ -117,6 +117,7 @@
             })
             ./hosts/laptops/unibook/configuration.nix
             agenix.nixosModules.default
+            stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -125,7 +126,6 @@
               home-manager.users.jonasf = {
                 imports = [
                   ./hosts/laptops/unibook/home.nix
-                  nix-colors.homeManagerModules.default
                 ];
               };
             }

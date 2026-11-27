@@ -1,4 +1,10 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  colors = config.lib.stylix.colors.withHashtag;
+in
+{
+  stylix.targets.waybar.enable = false;
+
   programs.waybar = {
     enable = true;
     package = pkgs.unstable.waybar;
@@ -111,7 +117,7 @@
       * {
         font-family: "FiraCode Nerd Font Mono", "JetBrains Mono", monospace;
         font-size: 13px;
-        color: #${config.colorScheme.palette.base05};
+        color: ${colors.base05};
       }
 
       #clock,
@@ -123,22 +129,22 @@
       #network,
       #custom-shutdown,
       #custom-spotify {
-        background-color: #${config.colorScheme.palette.base01};
+        background-color: ${colors.base01};
         padding: 0 10px 0 10px;
         margin: 0 5px 0 5px;
         border-radius: 5px;
       }
 
       #workspaces button {
-        color: #${config.colorScheme.palette.base05};
+        color: ${colors.base05};
         background: transparent;
         border-radius: 5px;
         margin: 0 5px 0 5px;
       }
 
       #workspaces button.active {
-        color: #${config.colorScheme.palette.base05};
-        background: #${config.colorScheme.palette.base02};
+        color: ${colors.base05};
+        background: ${colors.base02};
       }
 
       #workspaces .taskbar-window {

@@ -1,20 +1,23 @@
-{ config, ... }: {
+{ config, ... }:
+{
+  stylix.targets.rofi.enable = false;
+
   programs.rofi = {
     enable = true;
     theme =
       let
-        inherit (config.colorScheme) palette;
+        colors = config.lib.stylix.colors.withHashtag;
       in
       builtins.toFile "config-hypr.rasi" ''
         * {
-          bg0: #${palette.base00};
-          bg1: #${palette.base01};
-          bg2: #${palette.base03}; 
-          bg3: #${palette.base0D}; 
-          fg0: #${palette.base06}; 
-          fg1: #${palette.base05}; 
-          fg2: #${palette.base06}; 
-          fg3: #${palette.base03}; 
+          bg0: ${colors.base00};
+          bg1: ${colors.base01};
+          bg2: ${colors.base03};
+          bg3: ${colors.base0D};
+          fg0: ${colors.base06};
+          fg1: ${colors.base05};
+          fg2: ${colors.base06};
+          fg3: ${colors.base03};
         }
 
         element selected {
@@ -120,4 +123,3 @@
       '';
   };
 }
-#    theme = "/home/jonasf/.local/share/rofi/themes/rounded-nord-dark.rasi";
