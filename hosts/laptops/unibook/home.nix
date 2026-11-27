@@ -30,11 +30,7 @@
   imports = [
     "${inputs.home-manager-unstable}/modules/services/window-managers/hyprland.nix"
     ./apps/hyprland.nix
-    ./apps/ghostty.nix
     ./apps/waybar.nix
-    ./apps/eza.nix
-    ./apps/rofi.nix
-    ./apps/gtk.nix
     ../../../shared/laptop/home
   ];
 

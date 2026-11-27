@@ -3,14 +3,18 @@
   pkgs,
   ...
 }:
+let
+  colors = config.lib.stylix.colors.withHashtag;
+in
 {
+  stylix.targets.waybar.enable = false;
+
   programs.waybar = {
     enable = true;
-    package = pkgs.unstable.waybar;
     settings.mainBar = {
       layer = "bottom";
       position = "top";
-      height = 34;
+      height = 25;
       modules-left = [
         "hyprland/workspaces"
       ];
@@ -62,7 +66,7 @@
         format = "{icon} {windows}";
         workspace-taskbar = {
           enable = true;
-          icon-size = 14;
+          icon-size = 12;
           icon-theme = "Papirus";
         };
       };
@@ -83,55 +87,57 @@
 
     style = ''
       window#waybar {
-        background-color: transparent;
+        background-color: rgba(51, 51, 51, 0.5);
+        opacity: 0.85;
+      }
+
+      * {
+        font-family: "FiraCode Nerd Font Mono", "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: ${colors.base05};
       }
 
       #clock,
       #cpu,
       #memory,
-      #network,
       #pulseaudio,
+      #network,
       #custom-shutdown,
-      #custom-pv,
-      #custom-plug,
-      #custom-weather,
       #custom-spotify {
+        background-color: ${colors.base01};
         padding: 0 10px 0 10px;
         margin: 0 5px 0 5px;
-        opacity: 1;
-        font-family: "FiraCode Nerd Font Mono", "JetBrains Mono", monospace;
-        font-size: 12px;
-        font-weight: bold;
-        color: #${config.colorScheme.palette.base05};
-      }
-
-
-      #clock,
-      #network,
-      #cpu,
-      #memory,
-      #pulseaudio,
-      #custom-shutdown,
-      #custom-spotify {
-        color: #${config.colorScheme.palette.base05};
-        background-color: #${config.colorScheme.palette.base00};
+        border-radius: 5px;
       }
 
       #workspaces button {
-        color: #${config.colorScheme.palette.base05};
+        color: ${colors.base05};
         background: transparent;
-        border-radius: 0px;
+        border-radius: 5px;
         margin: 0 5px 0 5px;
+      }
+
+      #workspaces button.active {
+        color: ${colors.base05};
+        background: ${colors.base02};
       }
 
       #workspaces .taskbar-window {
         padding-left: 0;
         padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
       }
 
-      #workspaces button.active {
-        color: #${config.colorScheme.palette.base05};
-        background: #${config.colorScheme.palette.base01};
+      #clock:hover,
+      #cpu:hover,
+      #memory:hover,
+      #pulseaudio:hover,
+      #workspaces button:hover,
+      #custom-shutdown:hover,
+      #custom-spotify:hover {
+        background-color: #999999;
+        transition: background-color 0.3s ease-out;
       }
     '';
   };

@@ -83,6 +83,7 @@
 
             ./hosts/laptops/main/configuration.nix
             agenix.nixosModules.default
+            stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -91,7 +92,6 @@
               home-manager.users.jonas = {
                 imports = [
                   ./hosts/laptops/main/home.nix
-                  stylix.nixosModules.stylix
                   hyprland.homeManagerModules.default
                 ];
               };

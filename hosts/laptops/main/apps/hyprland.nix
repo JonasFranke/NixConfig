@@ -5,7 +5,6 @@
   ...
 }:
 let
-  cs = config.colorScheme.palette;
   # mkLuaInline lets us embed raw Lua expressions inside the settings attrset
   wallpaper = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/dharmx/walls/refs/heads/main/nord/a_video_game_graphics_of_a_forest_and_a_lake.png";
@@ -73,10 +72,6 @@ in
           gaps_in = 2;
           gaps_out = 6;
           border_size = 3;
-          col = {
-            active_border = "0xff${cs.base07}";
-            inactive_border = "0xff${cs.base01}";
-          };
           resize_on_border = false;
           allow_tearing = false;
           layout = "dwindle";
@@ -94,7 +89,6 @@ in
             enabled = true;
             range = 4;
             render_power = 3;
-            color = "0xee${cs.base0F}";
           };
           blur = {
             enabled = true;
@@ -484,12 +478,6 @@ in
       input-field = {
         size = "20%, 5%";
         outline_thickness = 3;
-
-        inner_color = "rgba(0, 0, 0, 0.8)";
-        outer_color = "rgb(${cs.base05}) rgb(${cs.base01}) 45deg";
-        check_color = "rgb(${cs.base06}) rgb(${cs.base05}) 120deg";
-        fail_color = "rgb(${cs.base08}) rgb(770000) 40deg";
-        font_color = "rgb(${cs.base05})";
 
         placeholder_text = "<i>ENTER PASSWORD...</i>";
 

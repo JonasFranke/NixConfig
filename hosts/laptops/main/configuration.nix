@@ -18,6 +18,7 @@ in
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../../shared/laptop
+    ./stylix.nix
   ];
 
   age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
